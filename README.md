@@ -9,6 +9,7 @@ Those are supposed to implement the following methods, and only statisfying all 
 - wip
 
 |Name|C++|JS|Python|Rust|
+|---|---|---|---|---|
 |Array-based Linked List|❌|❌|❌|❌|
 |Array-based Linked List with loop|❌|❌|❌|❌|
 |Array-based Double Linked List|❌|❌|❌|❌|
