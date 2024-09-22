@@ -2,6 +2,11 @@ I've got a chnge of my heart.
 
 It's time to write some data structures and algorithms in a **tdd** way.
 
+### Data structures:
+|Name|C++|JS|Python|Rust|
+|---|---|---|---|---|
+|Test|❌|❌|❌|❌|
+
 First of all, there must be a clear list of what should I try to implement.
 - [ ] List of things to implement
 
