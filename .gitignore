@@ -1,1 +1,4 @@
 python/venv
+python/**/.mypy_cache
+python/**/.pytest_cache
+python/**/__pycache__
