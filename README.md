@@ -5,7 +5,12 @@ It's time to write some data structures and algorithms in a **tdd** way.
 ### Data structures:
 |Name|C++|JS|Python|Rust|
 |---|---|---|---|---|
-|Test|❌|❌|❌|❌|
+|Tree|❌|❌|❌|❌|
+|Graph|❌|❌|❌|❌|
+|Linked list|❌|❌|❌|❌|
+|Stack|❌|❌|❌|❌|
+|Queue|❌|❌|❌|❌|
+|Heap|❌|❌|❌|❌|
 
 ### Algorithms:
 |Name|C++|JS|Python|Rust|
