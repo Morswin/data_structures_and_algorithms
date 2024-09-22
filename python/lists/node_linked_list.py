@@ -119,23 +119,65 @@ class NodeLinkedList:
                 _i += 1
                 _current_node = _current_node.next_node
     
-    def delete(self, index) -> Union[int, None]:
+    def delete(self, index: int) -> Union[int, None]:
         ''' Delete value at specific index.
             
         '''
-        pass
+        if !self.is_empty():
+            if index < 0:
+                raise IndexError("You've tried to delete negative index, which is not supported in this type of list.")
+            elif index >= self.length:
+                raise IndexError("You've tried tp delete index outside of the list.")
+            else:
+                if index == 0:
+                    return self.delete_first()
+                elif index == self.length - 1:
+                    return self.delete_last()
+                else:
+                    _current_node: Node = self.head
+                    _previous_node: Node = self.head
+                    _i: int = 0
+                    while True:
+                        if _current_node is None:
+                            break
+                        if _i == index:
+                            _value: int = _current_node.value
+                            _previous_node.next_node = _current_node.next_node
+                            self.length -= 1
+                            return _value
+                        _previous_node = _current_node
+                        _current_node = _current_node.next_node
 
-    def delete_first(self, index: int) -> Union[int, None]:
+    def delete_first(self) -> Union[int, None]:
         ''' Delete first node.
             
         '''
-        pass
+        if !self.is_empty():
+            _value: int = self.head.value
+            if self.head.next_node is None:
+                self.head = None
+                self.length -= 1
+                return _value
+            else:
+                self.head = self.head.next_node
+                self.length -= 1
+                return _value
 
-    def delete_last(self, index: int) -> Union[int, None]:
+    def delete_last(self) -> Union[int, None]:
         ''' Delete last node.
             
         '''
-        pass
+        if !self.is_empty():
+            _current_node: Node = self.head
+            while True:
+                if _current_node is None:
+                    break
+                if _current_node.next_node.next_node is None:
+                    _value: int = _current_node.next_node.value
+                    _current_node.next_node = None
+                    self.length -= 1
+                    return _value
+                _current_node = _current_node.next_node
 
 
 class NodeLinedListWithLoop:
