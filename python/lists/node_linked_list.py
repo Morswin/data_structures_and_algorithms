@@ -1,16 +1,16 @@
-from typing import Union
+from typing import Union, Self
 
 
 class Node:
     ''' Node class.
         
     '''
-    value = 0
+    value: int
     # value: int
-    next_node = None
+    next_node: Union[Self, None]
     # next_node: Union[type(self), None]
 
-    def __init__(self, value, next_node):
+    def __init__(self, value=0, next_node=None):
         if value is not None:
             self.value = value
         else:
@@ -59,12 +59,16 @@ class NodeLinkedList:
             else:
                 # Right index has been found.
                 # Now to insert the value successfully
-                _current_node: Node = self.head
+                if self.head is None:
+                    return None
+                _current_node: Union[Node, None] = self.head
                 _i: int = 0
                 while _current_node is not None:
+                    if _current_node is None:
+                        return None
                     if _i == index:
                         # Let's insert this thing
-                        _new_node = Node(value, _current_node.next_node)
+                        _new_node: Union[Node, None] = Node(value, _current_node.next_node)
                         _current_node.next_node = _new_node
                         break
                     _i += 1
@@ -80,6 +84,7 @@ class NodeLinkedList:
         else:
             _new_node = Node(value, self.head)
             self.head = _new_node
+        self.length += 1
 
     def insert_last(self, value: int) -> None:
         ''' Insert value at the very back of the list.
@@ -88,14 +93,17 @@ class NodeLinkedList:
         if self.is_empty():
             self.head = Node(value)
         else:
+            if self.head is None:
+                return None
             _current_node: Node = self.head
             while True:
                 if _current_node is None:
-                    break
+                    return None
                 if _current_node.next_node is None:
                     _current_node.next_node = Node(value)
                     break
                 _current_node = _current_node.next_node
+        self.length
 
     def update(self, value: int, index: int):
         ''' Update a value at given index.
@@ -108,11 +116,15 @@ class NodeLinkedList:
         elif index < 0:
             raise IndexError("You've tried to update a value at negative index which is not supported in this type of list.")
         else:
+            if self.head is None:
+                return None
             _current_node: Node = self.head
             _i: int = 0
             while True:
                 if _current_node is None:
-                    break
+                    return None
+                if _current_node.next_node is None:
+                    return None
                 if _i == index:
                     _current_node.value = value
                     break
@@ -123,7 +135,7 @@ class NodeLinkedList:
         ''' Delete value at specific index.
             
         '''
-        if !self.is_empty():
+        if not self.is_empty():
             if index < 0:
                 raise IndexError("You've tried to delete negative index, which is not supported in this type of list.")
             elif index >= self.length:
@@ -134,12 +146,16 @@ class NodeLinkedList:
                 elif index == self.length - 1:
                     return self.delete_last()
                 else:
+                    if self.head is None:
+                        return None
                     _current_node: Node = self.head
                     _previous_node: Node = self.head
                     _i: int = 0
                     while True:
                         if _current_node is None:
-                            break
+                            return None
+                        if _current_node.next_node is None:
+                            return None
                         if _i == index:
                             _value: int = _current_node.value
                             _previous_node.next_node = _current_node.next_node
@@ -147,12 +163,15 @@ class NodeLinkedList:
                             return _value
                         _previous_node = _current_node
                         _current_node = _current_node.next_node
+        return None
 
     def delete_first(self) -> Union[int, None]:
         ''' Delete first node.
             
         '''
-        if !self.is_empty():
+        if not self.is_empty():
+            if self.head is None:
+                return None
             _value: int = self.head.value
             if self.head.next_node is None:
                 self.head = None
@@ -162,22 +181,28 @@ class NodeLinkedList:
                 self.head = self.head.next_node
                 self.length -= 1
                 return _value
+        return None
 
     def delete_last(self) -> Union[int, None]:
         ''' Delete last node.
             
         '''
-        if !self.is_empty():
+        if not self.is_empty() and self.head is not None:
             _current_node: Node = self.head
             while True:
                 if _current_node is None:
-                    break
+                    return None
+                if _current_node.next_node is None:
+                    return None 
                 if _current_node.next_node.next_node is None:
+                    if _current_node.next_node is None:
+                        return None
                     _value: int = _current_node.next_node.value
                     _current_node.next_node = None
                     self.length -= 1
                     return _value
                 _current_node = _current_node.next_node
+        return None
 
 
 class NodeLinedListWithLoop:
