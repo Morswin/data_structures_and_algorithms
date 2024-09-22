@@ -81,7 +81,7 @@ class NodeLinkedList:
             _new_node = Node(value, self.head)
             self.head = _new_node
 
-    def insert_back(self, value: int) -> None:
+    def insert_last(self, value: int) -> None:
         ''' Insert value at the very back of the list.
             
         '''
@@ -96,6 +96,46 @@ class NodeLinkedList:
                     _current_node.next_node = Node(value)
                     break
                 _current_node = _current_node.next_node
+
+    def update(self, value: int, index: int):
+        ''' Update a value at given index.
+            
+        '''
+        if self.is_empty():
+            raise IndexError("You've tried to update a value in an empty list.")
+        elif self.length <= index:
+            raise IndexError("You've tried to update a value at index that doesn't exist")
+        elif index < 0:
+            raise IndexError("You've tried to update a value at negative index which is not supported in this type of list.")
+        else:
+            _current_node: Node = self.head
+            _i: int = 0
+            while True:
+                if _current_node is None:
+                    break
+                if _i == index:
+                    _current_node.value = value
+                    break
+                _i += 1
+                _current_node = _current_node.next_node
+    
+    def delete(self, index) -> Union[int, None]:
+        ''' Delete value at specific index.
+            
+        '''
+        pass
+
+    def delete_first(self, index: int) -> Union[int, None]:
+        ''' Delete first node.
+            
+        '''
+        pass
+
+    def delete_last(self, index: int) -> Union[int, None]:
+        ''' Delete last node.
+            
+        '''
+        pass
 
 
 class NodeLinedListWithLoop:
