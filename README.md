@@ -6,7 +6,17 @@ It's time to write some data structures and algorithms in a **tdd** way.
 
 ### Linked Lists:
 Those are supposed to implement the following methods, and only statisfying all of them will count as a success in the table:
-- wip
+- Create a new list
+- Insert a value at the beginning
+- Insert a value at the end
+- Insert a value at specific index
+- Update a vaule at specific index
+- Delete the first value
+- Delete the last value
+- Delete a value at specific index
+- Is empty check
+- **There will be more added later**
+
 
 |Name|C++|JS|Python|Rust|
 |---|---|---|---|---|
