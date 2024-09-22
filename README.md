@@ -7,7 +7,12 @@ It's time to write some data structures and algorithms in a **tdd** way.
 |---|---|---|---|---|
 |Tree|❌|❌|❌|❌|
 |Graph|❌|❌|❌|❌|
-|Linked list|❌|❌|❌|❌|
+|Array-based Linked List|❌|❌|❌|❌|
+|Array-based Linked List with loop|❌|❌|❌|❌|
+|Array-based Double Linked List|❌|❌|❌|❌|
+|Node-based Linked List|❌|❌|❌|❌|
+|Node-based Linked List with loop|❌|❌|❌|❌|
+|Node-based Double Linked List|❌|❌|❌|❌|
 |Stack|❌|❌|❌|❌|
 |Queue|❌|❌|❌|❌|
 |Heap|❌|❌|❌|❌|
