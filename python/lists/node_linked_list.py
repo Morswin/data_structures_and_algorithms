@@ -103,7 +103,7 @@ class NodeLinkedList:
                     _current_node.next_node = Node(value)
                     break
                 _current_node = _current_node.next_node
-        self.length
+        self.length += 1
 
     def update(self, value: int, index: int):
         ''' Update a value at given index.
@@ -201,6 +201,53 @@ class NodeLinkedList:
                     _current_node.next_node = None
                     self.length -= 1
                     return _value
+                _current_node = _current_node.next_node
+        return None
+
+    def get_at(self, index: int) -> Union[int, None]:
+        ''' Get the value at given index.
+            
+        '''
+        if index < 0:
+            raise IndexError("You've tried to get value from a negative index which is not supported in this data structure")
+        if index >= self.length:
+            raise IndexError("You've tried to get value at an index outside of this list's length")
+        if not self.is_empty() and self.head is not None:
+            if index == 0:
+                return self.get_first()
+            elif index == self.length - 1:
+                return self.get_last()
+            else:
+                _i: int = 0
+                _current_node: Union[Node, None] = self.head
+                while True:
+                    if _current_node is None:
+                        return None
+                    if _i == index:
+                        return _current_node.value
+                    _i += 1
+                    _current_node = _current_node.next_node
+        return None
+
+    def get_first(self) -> Union[int, None]:
+        ''' Get the first value.
+            
+        '''
+        if not self.is_empty() and self.head is not None:
+            return self.head.value
+        return None
+
+    def get_last(self) -> Union[int, None]:
+        ''' Get the last value.
+            
+        '''
+        if not self.is_empty() and self.head is not None:
+            _current_node: Union[Node, None] = self.head
+            while True:
+                if _current_node is None:
+                    return None
+                if _current_node.next_node is None:
+                    return _current_node.value
                 _current_node = _current_node.next_node
         return None
 

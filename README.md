@@ -11,10 +11,13 @@ Those are supposed to implement the following methods, and only statisfying all 
 - Insert a value at the end
 - Insert a value at specific index
 - Update a vaule at specific index
-- Delete the first value
-- Delete the last value
-- Delete a value at specific index
+- Delete the first value and return it
+- Delete the last value and return it
+- Delete a value at specific index and return it
 - Is empty check
+- Get a value form given index
+- Get the first value
+- Get the last value
 - **There will be more added later**
 
 
