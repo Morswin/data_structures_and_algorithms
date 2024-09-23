@@ -23,10 +23,10 @@ Those are supposed to implement the following methods, and only statisfying all 
 
 |Name|C++|JS|Python|Rust|
 |---|---|---|---|---|
-|Array-based Linked List|❌|❌|🧪|❌|
+|Array-based Linked List|❌|❌|❌|❌|
 |Array-based Linked List with loop|❌|❌|❌|❌|
 |Array-based Double Linked List|❌|❌|❌|❌|
-|Node-based Linked List|❌|❌|❌|❌|
+|Node-based Linked List|❌|❌|🧪|❌|
 |Node-based Linked List with loop|❌|❌|❌|❌|
 |Node-based Double Linked List|❌|❌|❌|❌|
 
