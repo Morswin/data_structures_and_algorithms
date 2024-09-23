@@ -2,6 +2,12 @@ I've got a chnge of my heart.
 
 It's time to write some data structures and algorithms in a **tdd** way.
 
+Potential statuses:
+- ❌ - I didn't work on this yet
+- 🛠️ - I am working on this
+- 🧪 - I implemented this and I am making sure all tests pass
+- ✔️ - I have implemented a solution
+
 ## Data structures:
 
 ### Linked Lists:
