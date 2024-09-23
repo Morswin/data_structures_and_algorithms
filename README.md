@@ -34,7 +34,7 @@ Those are supposed to implement the following methods, and only statisfying all 
 |Array-based Double Linked List|❌|❌|❌|❌|
 |Node-based Linked List|❌|❌|🧪|❌|
 |Node-based Linked List with loop|❌|❌|🛠️|❌|
-|Node-based Double Linked List|❌|❌|❌|🛠️|
+|Node-based Double Linked List|❌|❌|🛠️|❌|
 
 ### Other:
 |Name|C++|JS|Python|Rust|
